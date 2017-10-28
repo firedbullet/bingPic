@@ -1,0 +1,41 @@
+/* pages/settings/settings.wxss */
+
+.title {
+  display: inline-block;
+  padding: 10px 20px;
+  border-bottom: 1px solid #0f9154;
+  width: 20vw;
+}
+
+.settings_box {
+  margin-top: 10px;
+}
+
+.swich_text {
+  display: inline-block;
+  font-size: 30rpx;
+}
+
+/*选择分辨率  */
+
+.picker_title {
+  display: inline-block;
+  padding: 10px 20px;
+  border-bottom: 1px solid #0f9154;
+  font-size: 30rpx;
+  margin-top: 40px;
+}
+
+.picker_box {
+  display: inline-block;
+}
+
+.picker_item {
+  font-size: 26rpx;
+  padding: 2vw 6vw;
+}
+
+.about_item{
+  font-size: 26rpx;
+  padding: 1.5vw 8vw;
+}

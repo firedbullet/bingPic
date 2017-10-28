@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/settings/settings",
+    "pages/life/life"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0F9154",
+    "navigationBarTitleText": "Bing美图",
+    "navigationBarTextStyle": "#E1EAE6"
+  }
+}

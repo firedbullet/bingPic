@@ -1,0 +1,4 @@
+<block wx:for="{{life}}" wx:key="key0">
+  <image wx:if="{{picture[index]}}"  mode="aspectFill" style='width:100%' src='{{picture[index]}}'></image>
+  <view style='font-size:26rpx;line-height:40rpx;text-indent:52rpx;'>{{item}}</view>
+</block>
