@@ -36,8 +36,8 @@ const setSettings = () => {
 const getSettings = () => {
   let s = JSON.parse(wx.getStorageSync("bingPic") || "{}");
   resoIndex = s.resoIndex || 0;
-  layout = s.layout || 0;
-  downSize = s.downSize || "_1080x1920.jpg";
+  layout = s.layout || 1;
+  downSize = s.downSize || "_1920x1200.jpg";
   mkt = s.mkt || "zh-CN";
 }
 
@@ -83,6 +83,7 @@ Page({
   },
   //切换完成
   swipeEnd(e) {
+    if (e.detail.current == currDay) return;
     currDay = e.detail.current;
     storyIndex = -1;
 
@@ -188,7 +189,6 @@ Page({
 const loadCurrInfo = (that) => {
   wx.showNavigationBarLoading();
   getStoryInfo(imagesInfo[currDay].date, (data) => {
-    console.log(data)
     imagesInfo[currDay].attribute = data.attribute
     imagesInfo[currDay].story = data.para1.match(/\S+?。/g);
     imagesInfo[currDay].story.push(data.title)

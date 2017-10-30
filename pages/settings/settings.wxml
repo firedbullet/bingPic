@@ -4,6 +4,7 @@
     <switch checked="{{layout==1}}" color="#0F9154" bindchange="changeLayout" />
     <view class='swich_text'>{{layout == 1?"开":"关"}}</view>
   </view>
+
   <view class="picker_title">选择下载分辨率</view>
   <view class="settings_box">
     <picker class="picker_box" value="{{index-1+layout}}" bindchange="changeReso" range="{{size}}">
@@ -11,10 +12,17 @@
     </picker>
   </view>
 
+  <view class="picker_title">帮助</view>
+  <view class="settings_box">
+    <view class="about_item">
+      <text selectable="true" style='color:#4c525a;'>长按封面可以下载图片\n 点击故事弹框可打开Life\n\n 因大陆锁区只有中英版(几无二致)\n故切换区域未加\n 会考虑vpn模式添加换区功能</text>
+    </view>
+  </view>
+
   <view class="picker_title">关于</view>
   <view class="settings_box">
     <view class="about_item">
-      <text selectable="true" style='color:#4c525a;'>微信小程序bingPic设计灵感源于wp8的搜索 \n提供今天、明天(预)和过去两周的\n Bing每日图片 & 故事 & 生活的下载查阅 \n欢迎交流和反馈意见！</text>
+      <text selectable="true" style='color:#4c525a;'>微信小程序bingPic设计灵感源于wp8的搜索\n 提供今天、明天(预)和过去两周的\n Bing图片 & 故事 & 生活的下载查阅\n 欢迎交流和反馈意见！</text>
     </view>
     <view class="about_item">开发者邮箱：
       <text selectable="true" bindtap='copy' data-copy='firedbullet@outlook.com' style='color:#427cd2;text-decoration:underline'>firedbullet@outlook.com</text>
@@ -23,4 +31,6 @@
       <text selectable="true" bindtap='copy' data-copy='www.bing.com' style='color:#427cd2;text-decoration:underline'>www.bing.com</text>
     </view>
   </view>
+
+
 </view>

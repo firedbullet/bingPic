@@ -8,7 +8,7 @@
 }
 
 .settings_box {
-  margin-top: 10px;
+  margin: 2vw 0 4vw;
 }
 
 .swich_text {
@@ -23,7 +23,7 @@
   padding: 10px 20px;
   border-bottom: 1px solid #0f9154;
   font-size: 30rpx;
-  margin-top: 40px;
+  margin-top: 4vw;
 }
 
 .picker_box {

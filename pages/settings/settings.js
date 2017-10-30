@@ -12,13 +12,14 @@ let layout,//横竖屏
 let temp //保留的this
 
 Page({
+  //复制
   copy(e) {
     console.log(e)
     wx.setClipboardData({
       data: e.target.dataset.copy,
       success: (data) => {
         wx.showToast({
-          title: '文字复制成功！',
+          title: '链接复制成功！',
         })
       }
     })
@@ -31,7 +32,7 @@ Page({
         title: '不可切换',
         content: '当前分辨率(1920 x 1200)只有横屏，请切换其他分辨率体验竖屏',
         confirmText: '朕知道了',
-        success: () => {
+        complete: () => {
           temp.setData({
             layout: layout
           })
