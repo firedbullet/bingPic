@@ -2,6 +2,9 @@
 const HOSTS = "https://www.bing.com",
   BASESIZE = '_1080x1920.jpg'//要显示的分辨率
 
+//导入计算主色调模块
+let getImgRgb = require("./decoder.js");
+
 //获取应用实例
 let app = getApp()
 
@@ -40,8 +43,6 @@ const getSettings = () => {
   downSize = s.downSize || "_1920x1200.jpg";
   mkt = s.mkt || "zh-CN";
 }
-
-
 
 let imagesInfo = [],//保存的图片信息
   currDay = 0,//当前天 0为今天、1为昨天，最大为7
@@ -87,29 +88,34 @@ Page({
     currDay = e.detail.current;
     storyIndex = -1;
 
+    let that = this;
     //继续加载
     if (week < 1 && currDay == week * 8 + 7) {
       week++;
-      let that = this;
       getImgInfo((data) => {
         that.setData({
           images: imagesInfo
         })
       })
     }
-
+    // getImgRgb
     if (imagesInfo[currDay].story) {
       //换标题
       wx.setNavigationBarTitle({
         title: imagesInfo[currDay].desc,
       })
-      this.setData({
+      that.setData({
         currDay: currDay,
-        storyIndex: storyIndex
+        storyIndex: storyIndex,
+        iconAnim: false
       })
+      setTimeout(function () {
+        that.setData({
+          iconAnim: true
+        })
+      }, 200)
     }
     else {
-      let that = this;
       loadCurrInfo(that);
     }
 
@@ -150,6 +156,7 @@ Page({
     })
   },
   onLoad() {
+    currDay = 1;
     getSettings()
     wx.getSystemInfo({
       success(res) {
@@ -200,11 +207,19 @@ const loadCurrInfo = (that) => {
     wx.setNavigationBarTitle({
       title: imagesInfo[currDay].desc,
     })
+
     that.setData({
       images: imagesInfo,
       currDay: currDay,
-      storyIndex: storyIndex
+      storyIndex: storyIndex,
+      iconAnim: false
     })
+    setTimeout(function () {
+      that.setData({
+        iconAnim: true
+      })
+    }, 200)
+
     wx.hideNavigationBarLoading();
   })
 }
@@ -260,10 +275,7 @@ const getStoryInfo = (date, cb) => {
  */
 const getStoryLife = (date, cb) => {
   wx.request({
-    url: 'https://www.bing.com/cnhp/life?toHttps=1&redig=ADA22F2966734534B838831DF74D7E7D&intlF=&currentDate=' + date + '&IID=SERP.5044&IG=6D7C8BCF942F48FEB4B783EE88DFD288',
-    header: {
-      'Cookie': 'ENSEARCH=BENVER=0'
-    },
+    url: 'https://www.bing.com/cnhp/life?currentDate=' + date,
     success(res) {
       if (cb) cb(res.data);
     }
@@ -292,6 +304,7 @@ const getPos = () => {
   }
   return arr;
 }
+
 
 //导出
 module.exports = {
