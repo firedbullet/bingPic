@@ -1,11 +1,7 @@
 //index.js
 const HOSTS = "https://www.bing.com",
-	BASESIZE = '_720x1280.jpg', //要显示的分辨率
-	COLORSIZE = "_240x320.jpg"
+	BASESIZE = '_720x1280.jpg' //要显示的分辨率
 
-//导入计算主色调模块
-let getImgRgb = require("./decoder.js");
-let resMod = require("./res.js");
 let settingsMod;
 
 //获取应用实例
@@ -14,7 +10,6 @@ let app = getApp()
 //设置中可更改的内容
 let downSize, //要下载的分辨率
 	mkt //区域
-
 
 let imagesInfo,	//保存的图片信息
 	currDay, //当前天 0为今天、1为昨天，最大为7
@@ -26,7 +21,23 @@ Page({
 		images: imagesInfo,
 		BASESIZE: BASESIZE,
 		currDay: currDay
-
+	},
+	// 跳到当天
+	goToday() {
+		storyIndex = -1;
+		currDay = 1;
+		this.setData({
+			currDay: currDay,
+			storyIndex: storyIndex,
+			iconAnim: false
+		})
+		let mainMod = this;
+		// 开启动画
+		setTimeout(function () {
+			mainMod.setData({
+				iconAnim: true
+			})
+		}, 400)
 	},
 	//bing life
 	showLife() {
@@ -49,7 +60,7 @@ Page({
 	//设置
 	gotoSettings() {
 		wx.navigateTo({
-			url: "../settings/settings"
+			url: `../settings/settings?bg=${imagesInfo[currDay].urlBase + BASESIZE}`
 		})
 	},
 	//切换完成
@@ -71,20 +82,6 @@ Page({
 			})
 		}
 
-		// 换标题颜色
-		if (imagesInfo[currDay].color) {
-			wx.setNavigationBarColor({
-				frontColor: '#ffffff',
-				backgroundColor: imagesInfo[currDay].color,
-				animation: {
-					duration: 400
-				}
-			})
-		}
-		// 换标题
-		wx.setNavigationBarTitle({
-			title: imagesInfo[currDay].desc,
-		})
 		// 刷新故事内容，闪烁动画
 		this.setData({
 			images: imagesInfo,
@@ -212,20 +209,6 @@ const getImgInfo = (mainMod, cb) => {
 
 				//获取图片资源，故事
 				((index) => {
-					// 资源
-					resMod.getResData(imagesInfo[index].urlBase + COLORSIZE, (data) => {
-						imagesInfo[index].color = getImgRgb(data, true, 240, 20);
-						if (index === currDay) {
-							wx.hideNavigationBarLoading();
-							wx.setNavigationBarColor({
-								frontColor: '#ffffff',
-								backgroundColor: imagesInfo[index].color,
-								animation: {
-									duration: 400
-								}
-							})
-						}
-					})
 					// 故事
 					if (mkt === "zh-CN")
 						getStoryInfo(imagesInfo[index].date, (data) => {
@@ -255,10 +238,6 @@ const getImgInfo = (mainMod, cb) => {
 				})(i + week * 8)
 
 			}
-			// 换标题
-			wx.setNavigationBarTitle({
-				title: imagesInfo[currDay].desc,
-			})
 			if (cb) cb(res.data);
 		}
 	})

@@ -8,13 +8,17 @@ const SIZE_H = ["1920 x 1080", "1366 x 768", "1280 x 720", "1024 x 768", "800 x 
 // de-DE,	pt-BR,	fr-FR,	en-AU	,fr-CA ,en-CA	,en-US	,en-WW,	ja-JP,	en-IN,	en-GB,	zh-CN	,zh_HK 
 
 
-let layout ,//横竖屏
-	sizeIndex , //下载分辨率的index
-	mktIndex , //区域index
+let layout,//横竖屏
+	sizeIndex, //下载分辨率的index
+	mktIndex, //区域index
 	refreshMain  //主页刷新方法
 
 let settings//留住this
 Page({
+	// 返回
+	goback() {
+		wx.navigateBack()
+	},
 	//复制
 	copy(e) {
 		wx.setClipboardData({
@@ -51,9 +55,10 @@ Page({
 		})
 		saveSettings()
 	},
-	onLoad() {
+	onLoad(msg) {
 		settings = this;
 		settings.setData({
+			bg: msg.bg,
 			layout: layout,
 			sizePicker: layout ? SIZE_H : SIZE_V,
 			sizeIndex: sizeIndex,
@@ -62,7 +67,7 @@ Page({
 		})
 	},
 	onUnload() {
-		refreshMain(getDownSIze(), MKT[mktIndex],false)
+		refreshMain(getDownSIze(), MKT[mktIndex], false)
 	}
 
 })

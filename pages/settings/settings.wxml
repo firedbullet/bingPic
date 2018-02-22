@@ -1,4 +1,9 @@
-<view style="text-align:center;">
+<image class="bg" mode="aspectFill" src='{{bg}}'></image>
+<view class="navbar">
+    <view class="goback" bindtap="goback">←</view>
+    <view class="title">设置</view>
+</view>
+<view class="content">
     <view class="picker_title">下载为横屏</view>
     <view class="settings_box">
         <switch checked="{{layout==1}}" color="#0F9154" bindchange="changeLayout" />
@@ -19,18 +24,16 @@
         </picker>
     </view>
 
-    <view class="picker_title">帮助</view>
     <view class="settings_box">
         <view class="about_item">
-            <text selectable="true" style='color:#ec525a;font-weight:bold;'>仅中国区有Bing每日图文故事!\n</text>
-            <text selectable="true" style='color:#4c525a;'> 点击故事弹框可打开Life\n 长按封面可以下载图片\n</text>
+            <text selectable="true" style='color:#ec525a;font-weight:bold;'>仅中国区有Bing每日图文故事!</text>
         </view>
     </view>
 
     <view class="picker_title">关于</view>
     <view class="settings_box">
         <view class="about_item">
-            <text selectable="true" style='color:#4c525a;'>以此纪念 windows phone \n提供今、明(预)和过去两周的Bing图片下载及每日故事\n 欢迎交流和反馈意见！</text>
+            <text selectable="true">以此纪念 windows phone \n提供今、明(预)和过去两周的Bing图片下载及每日故事\n 欢迎交流和反馈意见！</text>
         </view>
         <view class="about_item">开发者邮箱：
             <text selectable="true" bindtap='copy' data-copy='firedbullet@outlook.com' style='color:#427cd2;text-decoration:underline'>firedbullet@outlook.com</text>

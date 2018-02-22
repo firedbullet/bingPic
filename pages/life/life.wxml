@@ -1,4 +1,8 @@
 <image class='bg' mode="aspectFill" src='{{bg}}'></image>
+<view class="navbar">
+	<view class="goback" bindtap="goback">←</view>
+	<view class="title">{{title}}</view>
+</view>
 <view class='cover'>
     <view class='content_box'>
         <!--顶部信息  -->

@@ -1,114 +1,120 @@
 /**index.wxss**/
 
 .outbox {
-  background-color: #fff;
+    background-color: #fff;
 }
 
+
 .view_box {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
 }
 
 image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .copy {
-  position: absolute;
-  left: 0;
-  top: 120rpx;
-  width: 90%;
-  padding: 10rpx 20rpx;
-  background: rgba(0, 0, 0, .4);
-  color: #fff;
-  font-family: '微软雅黑';
+    position: absolute;
+    left: 0;
+    top: 120rpx;
+    width: 90%;
+    padding: 10rpx 20rpx;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-family: '微软雅黑';
 }
 
 .copy_text {
-  position: absolute;
-  font-size: 26rpx;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 100%;
-  text-align: center;
-  bottom: 10rpx;
+    position: absolute;
+    font-size: 26rpx;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    text-align: center;
+    bottom: 10rpx;
 }
 
 /*故事  */
 
 .story_icon {
-  width: 8vw;
-  height: 8vw;
-  position: absolute;
-  background-color: rgba(0, 0, 0, .5);
-  border: 1px solid rgba(200 , 200, 200, .7);
+    width: 8vw;
+    height: 8vw;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(200, 200, 200, 0.7);
 }
 
 .story_icon_anim0 {
-  animation: story_icon_anim .25s ease-in;
-}
-.story_icon_anim1 {
-  animation: story_icon_anim .25s ease-in .3s;
-}
-.story_icon_anim2 {
-  animation: story_icon_anim .25s ease-in .6s;
-}
-.story_icon_anim3 {
-  animation: story_icon_anim .25s ease-in .9s;
-}
-@keyframes story_icon_anim {
-  0% {
-    width: 8vw;
-    height: 8vw;
-    margin-left: 0;
-    margin-top: 0;
-  }
-  50% {
-    width: 5vw;
-    height: 5vw;
-    margin-left: 1.5vw;
-    margin-top: 1.5vw;
-    border-color: rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, .9);
-  }
-  100%{
-    width: 8vw;
-    height: 8vw;
-    margin-left: 0;
-    margin-top: 0;
-  }
+    animation: story_icon_anim 0.25s ease-in;
 }
 
+.story_icon_anim1 {
+    animation: story_icon_anim 0.25s ease-in 0.3s;
+}
+
+.story_icon_anim2 {
+    animation: story_icon_anim 0.25s ease-in 0.6s;
+}
+
+.story_icon_anim3 {
+    animation: story_icon_anim 0.25s ease-in 0.9s;
+}
+
+@keyframes story_icon_anim {
+    0% {
+        width: 8vw;
+        height: 8vw;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    50% {
+        width: 5vw;
+        height: 5vw;
+        margin-left: 1.5vw;
+        margin-top: 1.5vw;
+        border-color: rgba(255, 255, 255, 1);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    100% {
+        width: 8vw;
+        height: 8vw;
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
 
 .story_box {
-  max-width: 45vw;
-  position: absolute;
-  font-size: 26rpx;
-  line-height: 6vw;
-  color: #fff;
-  background-color: rgba(0, 0, 0, .7);
-  padding: 1vw 2vw;
-  border: 1px solid rgba(255, 255, 255, .5);
-  z-index: 2;
+    max-width: 45vw;
+    position: absolute;
+    font-size: 26rpx;
+    line-height: 6vw;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1vw 2vw;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 2;
 }
 
 /*设置  */
 
 .settings {
-  width: 10vw;
-  height: 10vw;
-  font-size: 6vw;
-  line-height: 10vw;
-  text-align: center;
-  color: #ccc;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, .4);
-  position: absolute;
-  z-index: 10;
-  right: 8vw;
-  bottom: 8vw;
+    width: 10vw;
+    height: 10vw;
+    font-size: 6vw;
+    line-height: 10vw;
+    text-align: center;
+    color: #ccc;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    right: 8vw;
+    bottom: 8vw;
 }

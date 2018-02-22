@@ -47,12 +47,13 @@ let dayImg,
 
 
 Page({
+	// 返回
+	goback() {
+		wx.navigateBack()
+	},
 	onLoad(msg) {
 		let that = this;
 		wx.showNavigationBarLoading();
-		wx.setNavigationBarTitle({
-			title: msg.title
-		})
 		wx.request({
 			url: 'https://cn.bing.com/cnhp/life?currentDate=' + msg.date + "&mkt=zh-CN",
 			dataType: "notJSON",
@@ -61,6 +62,7 @@ Page({
 				console.log(msg.date, htmlStr)
 				getContent(htmlStr);
 				that.setData({
+					title: msg.title,
 					bg: msg.bg,
 					dayImg: dayImg,
 					dayTitle: dayTitle,
