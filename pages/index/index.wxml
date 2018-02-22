@@ -1,16 +1,16 @@
 <!--index.wxml-->
 <view class="outbox">
-  <swiper class="view_box" bindchange="swipeEnd" current="{{currDay}}">
-    <swiper-item wx:for="{{images}}" wx:for-item="i" wx:key="key1" wx:for-index="day">
-      <image mode="aspectFill" src="{{i.urlBase+BASESIZE}}" catch:longpress='download' catch:tap="preView" data-link="{{day}}" />
-      <view class="copy_text">{{i.date}} | {{i.copyText}}</view>
-      <block wx:for="{{i.story}}" wx:for-item="j" wx:key="key2" wx:for-index="pos">
-        <view class="story_icon {{iconAnim?'story_icon_anim'+pos:''}}" style="left:{{i.pos[pos][0]}}vw;top:{{i.pos[pos][1]}}vh" bindtap="showStory" data-index="{{pos}}"></view>
-        <view class="story_box" bindtap="showLife" data-index="{{pos}}" wx:if="{{currDay==day && pos===storyIndex}}" style="top:{{i.pos[pos][1]}}vh;{{i.pos[pos][0]>50?'right:'+(100-i.pos[pos][0]+0.5)+'vw;':'left:'+(i.pos[pos][0]+9)+'vw;'}}">
-          {{j}}
-        </view>
-      </block>
-    </swiper-item>
-  </swiper>
-  <view class="settings" bindtap='gotoSettings'>＋</view>
+    <swiper class="view_box" bindchange="swipeEnd" current="{{currDay}}">
+        <swiper-item wx:for="{{images}}" wx:for-item="i" wx:key="key1" wx:for-index="day">
+            <image mode="aspectFill" src="{{i.urlBase+BASESIZE}}" lazy-load="true" catch:longpress='download' catch:tap="preView" data-link="{{day}}" />
+            <view class="copy_text">{{i.date}} | {{i.copyText}}</view>
+            <block wx:for="{{i.story}}" wx:for-item="j" wx:key="key2" wx:for-index="pos">
+                <view class="story_icon {{iconAnim?'story_icon_anim'+pos:''}}" style="left:{{i.pos[pos][0]}}vw;top:{{i.pos[pos][1]}}vh" bindtap="showStory" data-index="{{pos}}"></view>
+                <view class="story_box" bindtap="showLife" data-index="{{pos}}" wx:if="{{currDay==day && pos===storyIndex}}" style="top:{{i.pos[pos][1]}}vh;{{i.pos[pos][0]>50?'right:'+(100-i.pos[pos][0]+0.5)+'vw;':'left:'+(i.pos[pos][0]+9)+'vw;'}}">
+                    {{j}}
+                </view>
+            </block>
+        </swiper-item>
+    </swiper>
+    <view class="settings" bindtap='gotoSettings'>＋</view>
 </view>

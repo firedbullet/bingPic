@@ -5,6 +5,7 @@
     "pages/life/life"
   ],
   "window": {
+	"navigationStyle":"custom",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0F9154",
     "navigationBarTitleText": "Bing美图",

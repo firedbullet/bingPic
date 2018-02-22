@@ -1,4 +1,43 @@
-<block wx:for="{{life}}" wx:key="key0">
-  <image wx:if="{{picture[index]}}"  mode="aspectFill" style='width:100%' src='{{picture[index]}}'></image>
-  <view style='font-size:26rpx;line-height:40rpx;text-indent:52rpx;'>{{item}}</view>
-</block>
+<image class='bg' mode="aspectFill" src='{{bg}}'></image>
+<view class='cover'>
+    <view class='content_box'>
+        <!--顶部信息  -->
+        <view class='top_title_box'>
+            <view class='top_title_title'>{{locTitle[0]}}</view>
+            <view class="top_title_sub">{{locSub[0]}}</view>
+            <view class="top_title_info">{{locInfo[0]}}</view>
+        </view>
+        <!--顶部图片  -->
+        <view class='top_img'>
+            <image mode="aspectFill" style='width:100%;height:100%;' src='{{dayImg}}'></image>
+            <view class="top_img_text">
+                <view class="day_title">{{dayTitle}}</view>
+                <view class="day_title day_title_sub">{{daySub}}</view>
+            </view>
+        </view>
+        <!--顶部信息  -->
+        <view class='top_title_box'>
+            <view class='top_title_title'>{{locTitle[1]}}</view>
+            <view class="top_title_sub">{{locSub[1]}}</view>
+            <view class="top_title_info">{{locInfo[1]}}</view>
+        </view>
+        <!--中间card  -->
+        <view class='card'>
+            <view class='card_box' wx:for="{{cardTitle}}" wx:key="card">
+                <view class='card_number'>{{index+1}}</view>
+                <view class="card_title">{{item}}</view>
+                <view class="card_content">{{cardContent[index]}}</view>
+            </view>
+        </view>
+        <!--底部信息  -->
+        <view class='bottom_info'>
+            <view class='bottom_info_box' wx:for="{{bottomTitle}}" wx:key="bottom">
+                <view class='bottom_info_title'>{{item}}</view>
+                <view class='bottom_info_sub'>{{bottomSub[index]}}</view>
+                <image mode="aspectFill" style='width:100%;' src='{{bottomImg[index]}}'></image>
+                <view class='bottom_info_info'>{{bottomInfo[index]}}</view>
+            </view>
+        </view>
+        <view class='copyright'>© 图片来源于Bing搜索 | © 2018 Microsoft</view>
+    </view>
+</view>

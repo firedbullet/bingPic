@@ -1,1 +1,149 @@
 /* pages/life/life.wxss */
+.bg{
+	position:absolute;
+	width: 100%;
+    height: 100vh;
+}
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.content_box {
+    position: absolute;
+    width: 88vw;
+    left: 6vw;
+    top: 6vw;
+    color: #fff;
+    letter-spacing: 2rpx;
+}
+
+/*顶部图片  */
+
+.top_img {
+    position: relative;
+    width: 88vw;
+    height: 50vw;
+    margin-bottom: 50rpx;
+}
+
+.top_img_text {
+    position: absolute;
+    width: 100%;
+    padding: 16rpx 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+.day_title {
+    text-indent: 30rpx;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.day_title_sub {
+    font-size: 24rpx;
+}
+
+/*顶部文字  */
+
+.top_title_box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50rpx;
+}
+
+.top_title_title {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.top_title_sub {
+    font-size: 24rpx;
+    color: #aaa;
+    margin-top: 5rpx;
+    margin-bottom: 30rpx;
+}
+
+.top_title_info {
+    font-size: 24rpx;
+}
+
+/*中间card  */
+
+.card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50rpx;
+}
+
+.card_box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24rpx;
+}
+
+.card_number {
+    position: absolute;
+    font-size: 34rpx;
+    font-weight: bold;
+    width: 38rpx;
+    height: 50rpx;
+    border-right: 2px solid #fff;
+}
+
+.card_title {
+    margin-left: 60rpx;
+    text-decoration-line: underline;
+    font-size: 26rpx;
+}
+
+.card_content {
+    margin-left: 65rpx;
+    margin-top: 12rpx;
+    font-size: 24rpx;
+}
+
+/*底部信息  */
+
+.bottom_info {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40rpx;
+}
+
+.bottom_info_box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40rpx;
+}
+.bottom_info_title {
+    font-size: 34rpx;
+    font-weight: bold;
+	text-decoration-line: underline;
+}
+
+.bottom_info_sub {
+    font-size: 24rpx;
+    color: #aaa;
+    margin-top: 5rpx;
+    margin-bottom: 30rpx;
+}
+
+.bottom_info_info {
+	margin-top: 10rpx;
+    font-size: 24rpx;
+}
+/*  */
+.copyright{
+	position: relative;
+	font-size: 20rpx;
+	text-align: right;
+    width: 100%;
+    margin-bottom: 40rpx;
+}
